@@ -1,26 +1,32 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { products, Product } from '../products';
+import {  Product } from '../products';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import {ProductService} from '../product.service'
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css']
 })
-// export class ProductItemComponent {
-//   products = products;
+
 export class ProductItemComponent implements OnInit {
-  @Input() product;
-  slideIndex = 1;
-  constructor() {}
+  product:Product;
+  constructor(private route: ActivatedRoute,
+    private productService: ProductService,
+    private location: Location) { }
 
   ngOnInit(): void {
+    this.getProduct();
   }
-  share(product: Product):void {
-    window.open(`//api.whatsapp.com/send?phone=77478865590_NUMBER&text=${product.link}`, "_blank");
+  getProduct(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productService.getProduct(id)
+      .subscribe(product => this.product = product);
   }
-  onNotify(){
-    window.alert('The product has been shared!');
+  
+  goBack(): void {
+    this.location.back();
   }
-
 
 
   }

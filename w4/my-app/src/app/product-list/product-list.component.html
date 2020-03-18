@@ -1,35 +1,25 @@
 <h2>Products</h2>
-<!-- <div *ngFor="let product of products" style="display:inline-block; width:400px; height:400px;margin-left:75px">
+<div *ngFor="let product of products">
+    <div *ngIf="category.id==product.categoryId" style="display:inline-block; width:400px; height:400px;margin-left:75px">
+      <h3 style>
+        <a [title]="product.name " href="{{product.link}}">
+          {{ product.name }}
+        </a>
+      </h3>
+      <img src= "{{product.image}}" style="height:300px; width: 300px;">
+      <p *ngIf="product.price">
+            Price: {{ product.price }}
+      </p>
+      <p *ngIf="product.description" style="height: 100px;">
+        Description: {{ product.description }}
+      </p>
+      <p *ngIf="product.rating">
+        Rating: {{ product.rating }}
+          </p>
+        <button (click)="share(product)">
+          Share
+        </button>
 
-  <h3 style>
-    <a [title]="product.name " href="{{product.link}}">
-      {{ product.name }}
-    </a>
-  </h3>
-  <img src= "{{product.image}}" style="height:300px; width: 300px;">
-  <p *ngIf="product.price">
-        Price: {{ product.price }}
-  </p>
-  <p *ngIf="product.description" style="height: 100px;">
-    Description: {{ product.description }}
-  </p>
-  <p *ngIf="product.rating">
-    Rating: {{ product.rating }}
-</p>
-  <button (click)="share(product)">
-    Share
-  </button>
 
-
-</div> -->
-<div *ngFor="let product of products" style="display:inline-block; width:400px; height:400px;margin-left:75px">
-  <app-product-item 
-      [product]="product">
-  </app-product-item>
+  </div>
 </div>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
---> 
