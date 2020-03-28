@@ -1,4 +1,4 @@
-def first_two(str);
+def first_two(str):
 	if len(str) == 0:
 		return ""
 	if len(str) < 2:
