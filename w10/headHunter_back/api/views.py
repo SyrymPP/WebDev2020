@@ -38,7 +38,8 @@ def company_vacancies(request, id):
     return JsonResponse(vacancy_json, safe=False)
 
 def top_ten(request):
-    vacancies = Vacancy.objects.order_by('-salary')
+    # vacancies = Vacancy.objects.order_by('-salary')
+    vacancies = Vacancy.objects.filter(salary__gte=100000)
     top = [vacancy.full() for vacancy in vacancies[:10]]
     return JsonResponse(top, safe=False)
 
