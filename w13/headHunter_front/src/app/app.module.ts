@@ -1,27 +1,27 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {NewsListComponent} from './news-list/news-list.component';
-import {NewsPageComponent} from './news-page/news-page.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
-import {AuthInterceptor} from "./auth.interceptor";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { NewsPageComponent } from './news-page/news-page.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { AuthInterceptor } from "../auth.interceptor";
+import { FormsModule } from "@angular/forms";
 import { VacanciesComponent } from './vacancies/vacancies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsListComponent,
     NewsPageComponent,
+    NewsListComponent,
     VacanciesComponent
   ],
   imports: [
-    AppRoutingModule,
-    FormsModule,
     BrowserModule,
-    HttpClientModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
     {
@@ -32,5 +32,4 @@ import { VacanciesComponent } from './vacancies/vacancies.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
