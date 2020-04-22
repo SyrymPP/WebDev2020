@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NewsPageComponent } from './news-page/news-page.component';
 import { NewsListComponent } from './news-list/news-list.component';
-import { AuthInterceptor } from "../auth.interceptor";
+import { AuthInterceptor } from "./auth.interceptor";
 import { FormsModule } from "@angular/forms";
 import { VacanciesComponent } from './vacancies/vacancies.component';
 

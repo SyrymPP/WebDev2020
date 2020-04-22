@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import{VacancyService} from '../vacancy.service'
 import { CompanyService } from "../company.service";
-import { Company, Vacancy } from "../../models"
+import { Company, Vacancy } from "../models"
 @Component({
   selector: 'app-vacancies',
   templateUrl: './vacancies.component.html',
@@ -11,8 +11,6 @@ import { Company, Vacancy } from "../../models"
 export class VacanciesComponent implements OnInit {
    vacancy:Vacancy
   constructor(private companyService: CompanyService,private vacancyService: VacancyService, private route: ActivatedRoute) { }
-  constructor() { }
-
   ngOnInit(): void {
    this.getVacancy()
   }

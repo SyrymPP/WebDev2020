@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   username = '';
   password = '';
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CompanyService) {}
 
   ngOnInit(){
     let token = localStorage.getItem('token');

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {CategoryService} from "../category.service";
-import {Category} from "../models";
+import { Component, OnInit } from '@angular/core';
+import {CompanyService} from "../company.service";
+import {Company} from "../models";
 
 @Component({
   selector: 'app-news-list',
@@ -8,27 +8,25 @@ import {Category} from "../models";
   styleUrls: ['./news-list.component.css']
 })
 export class NewsListComponent implements OnInit {
-  categories: Category[] = [];
-
-  constructor(public categoryService: CategoryService) {
-  }
+  companies: Company[] = [];
+  constructor(public companyService: CompanyService) { }
 
   ngOnInit(): void {
     this.getCompanyList();
   }
 
-  getCategoryList() {
+  getCompanyList() {
     this.companyService.getCompanyList()
       .subscribe(companies => {
-      this.companies = companies
+        this.companies = companies
       });
   }
 
-  //deleteCategory(id) {
-    //this.categoryService.deleteCategory(id).subscribe(res => {
+  deleteCompany(id) {
+    this.companyService.deleteCompany(id).subscribe(res => {
       // this.categories = this.categories.filter(c => c.id != id);
       // this.getCategoryList();
-    //});
-  //}
+    });
+  }
 
 }

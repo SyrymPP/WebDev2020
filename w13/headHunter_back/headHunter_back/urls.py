@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api.views.views_cbv import CompanyDetailsAPIView, CompanyListAPIView, CompanyVacanciesAPIView, VacancyDetailsAPIView, VacancyListAPIView
-from api.views.views_fbv import company_detail, companies_list, company_vacancies, vacancy_detail, vacancy_list
+# from api.views.views_fbv import company_detail, companies_list, company_vacancies, vacancy_detail, vacancy_list
 from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
